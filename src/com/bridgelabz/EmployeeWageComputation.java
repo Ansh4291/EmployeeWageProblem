@@ -8,27 +8,27 @@ public class EmployeeWageComputation {
         int PartTimeHrs = 8;
         int emprateperhrs = 20;
         int FullTimeHrs = 10;
-        int salary = 0;
+        int salary;
         int dailyhrs =0;
-
 
         Random obj = new Random();
         int attendance = obj.nextInt(3);
 
-        if(attendance == 0 ) {
-            System.out.println("Employee full Time Work ");
+        switch (attendance) {
+            case 0:
+                System.out.println("Employee Full Time Work");
+                salary = FullTimeHrs * emprateperhrs;
+                break;
 
-            salary=	FullTimeHrs*emprateperhrs ;
-        }
-        else if(attendance == 1) {
-            System.out.println("Employee is Part Time Work ");
+            case 1:
+                System.out.println("Employee is Part Time Work");
+                salary = PartTimeHrs * emprateperhrs;
+                break;
 
-            salary=	PartTimeHrs*emprateperhrs;
-        }
-        else {
-            System.out.println("Employee is absent ");
-
-            salary = dailyhrs*emprateperhrs;
+            default:
+                System.out.println("Employee is absent");
+                salary = dailyhrs * emprateperhrs;
+                break;
         }
 
         System.out.println(salary);
