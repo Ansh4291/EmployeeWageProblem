@@ -12,13 +12,17 @@ public class EmployeeWageComputation {
         int dailyhrs = 0;
          int WORKING_DAYS = 20;
         int WAGE_PER_HR = 20;
+        int MAX_WORKING_DAYS = 20;
+        int MAX_WORKING_HRS = 100;
 
         Random obj = new Random();
         int attendance = obj.nextInt(3);
 
         int totalWage = 0;
+        int workingHrs = 0;
+        var totalWorkingHrs = 0;
         for (int day = 1; day <= WORKING_DAYS; day++) {
-            int workingHrs = 0;
+            workingHrs = 0;
 
             switch (attendance) {
                 case 0:
@@ -37,7 +41,7 @@ public class EmployeeWageComputation {
                     break;
             }
             int dailyWage = workingHrs * WAGE_PER_HR;
-            System.out.println("Day " + day + " wage is:" + dailyWage);
+            System.out.println("Day " + day + " workingHrs is " + workingHrs + " wage is: " + dailyWage);
             totalWage += dailyWage;
         }
         System.out.println("Total wage for a month is " + totalWage);
