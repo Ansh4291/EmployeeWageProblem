@@ -5,25 +5,33 @@ import java.util.Random;
 public class EmployeeWageComputation {
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program");
-        int attendance;
-        int  emprateperhrs = 20;
-        int emphrs = 8;
-        int salary;
-
-        Random random = new Random();
-
-        attendance = random.nextInt(2);
+        int PartTimeHrs = 8;
+        int emprateperhrs = 20;
+        int FullTimeHrs = 10;
+        int salary = 0;
+        int dailyhrs =0;
 
 
-        System.out.println(attendance);
+        Random obj = new Random();
+        int attendance = obj.nextInt(3);
 
-        salary = attendance*emprateperhrs*emphrs;
-        if(attendance == 1) {
-            System.out.println(salary);
+        if(attendance == 0 ) {
+            System.out.println("Employee full Time Work ");
+
+            salary=	FullTimeHrs*emprateperhrs ;
+        }
+        else if(attendance == 1) {
+            System.out.println("Employee is Part Time Work ");
+
+            salary=	PartTimeHrs*emprateperhrs;
         }
         else {
-            System.out.println(salary);
+            System.out.println("Employee is absent ");
+
+            salary = dailyhrs*emprateperhrs;
         }
+
+        System.out.println(salary);
 
     }
     }
