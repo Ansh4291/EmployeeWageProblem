@@ -11,15 +11,20 @@ public class EmployeeWageComputation {
                 /*
                 Used the ComputeEmpWage() Method to Compute the Attendance
                  */
-    public void ComputeEmpWage() {
+    public void ComputeEmpWage(String companyName, int wagePerHrs , int maxWorkingHrsPerMonth, int maxWorkingDays) {
+
+        System.out.println("Database Of " + companyName + " Employee");
+        System.out.println("Wage Per Hours " + wagePerHrs);
+        System.out.println("Maximum Working Hours Per Month " + maxWorkingHrsPerMonth);
+        System.out.println("Maximum Working Days " + maxWorkingDays);
 
         /*
        Dailyhrs , totalWage , DailyWage , WorkingHrs , TotalWorkingHrs , Day = 1 , are declared
          */
-        int dailyhrs = 0;
+      //  int dailyhrs = 0;
         int totalWage = 0;
-        int DailyWage = 0;
-        var workingHrs = 0;
+        int DailyWage =0;
+        int workingHrs = 0;
         int totalWorkingHrs = 0;
         int day = 1;
 
@@ -42,8 +47,8 @@ public class EmployeeWageComputation {
                     workingHrs = 4;
                     System.out.println("Employee Working Part Time");
                     break;
-                default:
-                    workingHrs = 0;
+//                default:
+//                    workingHrs = 0;
             }
             /*
             calculating the Employee wage
@@ -70,8 +75,10 @@ public class EmployeeWageComputation {
         in the main method
          */
 
-        EmployeeWageComputation EmpWageCom = new EmployeeWageComputation();
-        EmpWageCom.ComputeEmpWage();
+       EmployeeWageComputation ewc = new EmployeeWageComputation();
+
+       ewc.ComputeEmpWage("HCL" , 40 , 100 , 25);
+       ewc.ComputeEmpWage("Mphasis Ltd" , 50, 100 , 22);
     }
 
 }
