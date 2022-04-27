@@ -3,49 +3,49 @@ package com.bridgelabz;
 import java.util.Random;
 
 public class EmployeeWageComputation {
+   static final int PARTTIME = 1;
+   static final int FULLTIME= 2;
+   static final int MAX_WORKING_DAYS = 20;
+   static final int MAX_WORKING_HRS = 100;
+    static final int Wadge_Per_Hrs = 20;
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program");
-        int PartTimeHrs = 8;
-         int emprateperhrs = 20;
-         final int FullTimeHrs = 10;
-         int salary = 0;
+
         int dailyhrs = 0;
-         int WORKING_DAYS = 20;
-        int WAGE_PER_HR = 20;
-        int MAX_WORKING_DAYS = 20;
-        int MAX_WORKING_HRS = 100;
+        int totalWage = 0;
+        int DailyWage = 0;
+        var workingHrs = 0;
+        int totalWorkingHrs = 0;
+        int day=1;
 
         Random obj = new Random();
+
+        for (day=1; MAX_WORKING_DAYS >= day; day++){
+
+
         int attendance = obj.nextInt(3);
 
-        int totalWage = 0;
-        int workingHrs = 0;
-        var totalWorkingHrs = 0;
-        for (int day = 1; day <= WORKING_DAYS; day++) {
-            workingHrs = 0;
-
             switch (attendance) {
-                case 0:
-                    System.out.println("Employee Full Time Work");
-                    salary = FullTimeHrs * emprateperhrs;
+                case FULLTIME:
+                    workingHrs=10;
+                    System.out.println("Employee Working Fullday");
                     break;
-
-                case 1:
-                    System.out.println("Employee is Part Time Work");
-                    salary = PartTimeHrs * emprateperhrs;
+                case PARTTIME:
+                    workingHrs = 4 ;
+                    System.out.println("Employee Working Part Time");
                     break;
-
                 default:
-                    System.out.println("Employee is absent");
-                    salary = dailyhrs * emprateperhrs;
-                    break;
+                    workingHrs = 0;
             }
-            int dailyWage = workingHrs * WAGE_PER_HR;
-            System.out.println("Day " + day + " workingHrs is " + workingHrs + " wage is: " + dailyWage);
-            totalWage += dailyWage;
+            DailyWage += workingHrs * Wadge_Per_Hrs;
+            totalWorkingHrs += MAX_WORKING_HRS;
+            totalWage += DailyWage;
+
+            System.out.println("Day is:- " + day + " Working Hours is :- "+ workingHrs + " Wage is :- " + DailyWage);
+
         }
         System.out.println("Total wage for a month is " + totalWage);
-            System.out.println(salary);
+
 
         }
     }
