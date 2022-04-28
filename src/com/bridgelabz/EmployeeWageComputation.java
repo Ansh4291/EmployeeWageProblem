@@ -42,14 +42,13 @@ public class EmployeeWageComputation {
             switch (attendance) {
                 case FULLTIME:
                     workingHrs = 10;
-                    System.out.println("Employee Working Fullday");
+
                     break;
                 case PARTTIME:
                     workingHrs = 4;
-                    System.out.println("Employee Working Part Time");
+
                     break;
-//                default:
-//                    workingHrs = 0;
+
             }
             /*
             calculating the Employee wage
@@ -60,10 +59,6 @@ public class EmployeeWageComputation {
             DailyWage += workingHrs * Wadge_Per_Hrs;
             totalWorkingHrs += MAX_WORKING_HRS;
             totalWage += DailyWage;
-
-            System.out.println("Total Working hour for " + companyName + " Company " + totalWorkingHrs + " And Total Working days are " + MAX_WORKING_DAYS);
-            System.out.println("Day is:- " + day + " Working Hours is :- " + workingHrs + " Wage is :- " + DailyWage);
-
         }
         System.out.println("Total wage of  " + companyName + "Company is " + totalWage);
 
@@ -77,10 +72,11 @@ public class EmployeeWageComputation {
         in the main method
          */
 
-       EmployeeWageComputation ewc = new EmployeeWageComputation();
+       EmployeeWageComputation tcs = new EmployeeWageComputation();
+       EmployeeWageComputation Mphasis = new EmployeeWageComputation();
 
-       ewc.ComputeEmpWage("HCL" , 40 , 100 , 25);
-       ewc.ComputeEmpWage("Mphasis Ltd" , 50, 100 , 22);
+       tcs.ComputeEmpWage("HCL" , 40 , 100 , 25);
+       Mphasis.ComputeEmpWage("Mphasis Ltd" , 50, 100 , 22);
     }
 
 }
