@@ -3,6 +3,7 @@ package com.bridgelabz;
 import java.util.Random;
 
 public class EmployeeWageComputation {
+    // Instance variable initialization
     static final int PARTTIME = 1;
     static final int FULLTIME = 2;
     static final int MAX_WORKING_DAYS = 20;
@@ -60,10 +61,11 @@ public class EmployeeWageComputation {
             totalWorkingHrs += MAX_WORKING_HRS;
             totalWage += DailyWage;
 
+            System.out.println("Total Working hour for " + companyName + " Company " + totalWorkingHrs + " And Total Working days are " + MAX_WORKING_DAYS);
             System.out.println("Day is:- " + day + " Working Hours is :- " + workingHrs + " Wage is :- " + DailyWage);
 
         }
-        System.out.println("Total wage for a month is " + totalWage);
+        System.out.println("Total wage of  " + companyName + "Company is " + totalWage);
 
     }
         public static void main (String[]args){
