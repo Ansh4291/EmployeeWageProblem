@@ -1,8 +1,10 @@
 package com.bridgelabz;
 
 import java.util.Random;
-
-public class EmployeeWageComputation {
+interface iEmpWageProb{
+    public void ComputeEmpWage(String companyName, int wagePerHrs , int maxWorkingHrsPerMonth, int maxWorkingDays);
+}
+public class EmployeeWageComputation implements iEmpWageProb{
     // Instance variable initialization
     static final int PARTTIME = 1;
     static final int FULLTIME = 2;
